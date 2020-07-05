@@ -1,0 +1,14 @@
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav{
+    font-family: sans-serif;
+    color:var(--black);
+    font-size: 30px;
+    text-decoration: none;
+}
+.nav:hover{
+    color:var(--blue);
+}
