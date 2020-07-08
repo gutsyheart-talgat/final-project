@@ -14,89 +14,63 @@
     .path{
         width: 300px;
     }
-    .headerBlue{
+    .headerBlue,.h1{
         font-size: 15px;
     }
     .navlink{
         font-size: 8px;
-    }
-    .input{
-        width: 200px;
-    }
-    .cars{
-        width: 270px;
     }
 }
 @media (min-width: 576px) {
     .path {
         width: 546px;
     }
-    .headerBlue{
+    .headerBlue,.h1{
         font-size: 25px;
     }
     .navlink{
         font-size: 12px;
     }
-    .input{
-        width: 220px;
-    }
-    .cars{
-        width: 516px;
-    }
+   
   }
   
   @media (min-width: 768px) {
     .path {
         width: 738px;
     }
-    .headerBlue{
+    .headerBlue,.h1{
         font-size: 30px;
     }
     .navlink{
         font-size: 17px;
     }
-    .input{
-        width: 310px;
-    }
-    .cars{
-        width: 718px;
-    }
+    
   }
   
   @media (min-width: 992px) {
     .path {
         width: 962px;
     }
-    .headerBlue{
+    .headerBlue,.h1{
         font-size: 35px;
     }
     .navlink{
         font-size: 20px;
     }
-    .input{
-        width: 400px;
-    }
-    .cars{
-        width: 932px;
-    }
+    
   }
   
   @media (min-width: 1200px) {
     .path {
         width: 1170px;
     }
-    .headerBlue{
+    .headerBlue,.h1{
         font-size: 40px;
     }
     .navlink{
         font-size: 25px;
     }
-    .input{
-        width: 337.5px;
-    }
-    .cars{
-        width: 1140px;
-    }
+    
   }
 
 .header{
@@ -135,31 +109,12 @@
     color:var(--white);
     font-weight: bold;
 }
-.inputs{
-    background-color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-bottom: 1px solid black;
-}
-.input{
-    margin: 15px 15px;
-    height: 25px;
-}
-.cars{
-    margin: 10px 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.Car{
-    background-color: var(--white);
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.h1{
+    text-align: center;
 }
 .carinfo{
-    width: 90%;
-    height: 90%;
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+    background-color: black;
 }

@@ -135,31 +135,3 @@
     color:var(--white);
     font-weight: bold;
 }
-.inputs{
-    background-color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-bottom: 1px solid black;
-}
-.input{
-    margin: 15px 15px;
-    height: 25px;
-}
-.cars{
-    margin: 10px 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.Car{
-    background-color: var(--white);
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.carinfo{
-    width: 90%;
-    height: 90%;
-}

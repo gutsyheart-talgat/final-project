@@ -43,9 +43,11 @@ export default function(){
                         <input type="text" className={style.input} placeholder="руль"></input>
                         <input type="text" className={style.input} placeholder="цвет"></input>
                     </div>
-                    <div> 
+                    <div className={style.cars}> 
                         {cars.map(car =>(
-                            <div key={car.id} className={style.cars}></div>
+                            <div key={car.id} className={style.Car}>
+                                <div className={style.carinfo}></div>
+                            </div>
                         ))}
                     </div>
                 </div>

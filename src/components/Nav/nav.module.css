@@ -12,3 +12,28 @@
 .nav:hover{
     color:var(--blue);
 }
+@media (max-width: 576px){
+    .nav{
+        font-size: 15px;
+    }
+}
+@media (min-width: 576px) {
+    .nav{
+        font-size: 25px;
+    }
+}
+@media (min-width: 768px) {
+    .nav{
+        font-size: 30px;
+    }
+}
+@media (min-width: 992px){
+    .nav{
+        font-size: 35px;
+    }
+}
+@media (min-width: 1200px){
+    .nav{
+        font-size: 40px;
+    }
+}
