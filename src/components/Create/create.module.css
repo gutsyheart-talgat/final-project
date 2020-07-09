@@ -17,15 +17,18 @@
     .headerBlue{
         font-size: 15px;
     }
-    .navlink{
+    .navlink,.h2,.createbtn{
         font-size: 8px;
     }
-    .input{
-        width: 200px;
+    .create{
+        width: 150px;
     }
-    .cars{
-        width: 270px;
+    .input,.createbtn{
+        width:50px;
+        height: 15px;
     }
+    
+   
 }
 @media (min-width: 576px) {
     .path {
@@ -34,15 +37,17 @@
     .headerBlue{
         font-size: 25px;
     }
-    .navlink{
+    .navlink,.h2,.createbtn{
         font-size: 12px;
     }
-    .input{
-        width: 220px;
+    .create{
+        width: 273px;
     }
-    .cars{
-        width: 516px;
+    .input,.createbtn{
+        width: 91px;
+        height: 15px;
     }
+   
   }
   
   @media (min-width: 768px) {
@@ -52,14 +57,15 @@
     .headerBlue{
         font-size: 30px;
     }
-    .navlink{
+    .navlink,.h2,.createbtn{
         font-size: 17px;
     }
-    .input{
-        width: 310px;
+    .create{
+        width: 369px;
     }
-    .cars{
-        width: 718px;
+    .input,.createbtn{
+        width: 123px;
+        height: 30px;
     }
   }
   
@@ -70,15 +76,17 @@
     .headerBlue{
         font-size: 35px;
     }
-    .navlink{
+    .navlink,.h2,.createbtn{
         font-size: 20px;
     }
-    .input{
-        width: 400px;
+    .create{
+        width: 481px;
     }
-    .cars{
-        width: 932px;
+    .input,.createbtn{
+        width: 160.4px;
+        height: 30px;
     }
+    
   }
   
   @media (min-width: 1200px) {
@@ -88,15 +96,17 @@
     .headerBlue{
         font-size: 40px;
     }
-    .navlink{
+    .navlink,.h2,.createbtn{
         font-size: 25px;
     }
-    .input{
-        width: 337.5px;
+    .create{
+        width: 585px;
     }
-    .cars{
-        width: 1140px;
+    .input,.createbtn{
+        width: 195px;
+        height: 30px;
     }
+   
   }
 
 .header{
@@ -134,4 +144,33 @@
     align-items: center;
     color:var(--white);
     font-weight: bold;
+}
+.create{
+    margin-left: 50px;
+}
+.createifno{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    color: var(--blue);
+    background-color: inherit;
+    border: none;
+}
+.button{
+    color: var(--white);
+    background-color: var(--blue);
+}
+.btn:hover{
+    cursor: pointer;
+}
+.createbtn{
+    text-align: center;
+    color: var(--white);
+    background-color: var(--blue);
+    border: none;
+    margin-left: 40%;
 }
