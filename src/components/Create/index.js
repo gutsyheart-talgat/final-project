@@ -2,11 +2,7 @@ import React from 'react'
 import style from './create.module.css'
 import {    NavLink    } from 'react-router-dom'
 export default function(){
-    const btn = document.querySelectorAll('.btn')
-    btn.addEventListener('click', function(){
-        btn.className.remove()
-        btn.className.add('button')
-    })
+    const {className, setClassName} = React.useState()
     return (
         <div className={style.back}>
             <div className={style.path}>
@@ -36,31 +32,56 @@ export default function(){
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Тип кузова </h2>
-                        <button className={style.btn}>седан</button>
-                        <button className={style.btn}>универсал</button>
-                        <button className={style.btn}>внедорожник</button>
-                        <button className={style.btn}>хэтчбек</button>
+                        <div className={style.carinfo}>
+                            <p className={style.p1}>кузов</p>
+                            <p className={style.p2}> 
+                               <span className={style.span}>седан</span>
+                               <span className={style.span}>внедорожник</span>
+                               <span className={style.span}>хэтчбэк</span>
+                               <span className={style.span}>универсал</span>
+                            </p>
+                        </div>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>КПП</h2>
-                        <button className={style.btn}>автомат</button>
-                        <button className={style.btn}>механика</button>
+                        <div className={style.carinfo}>
+                            <p className={style.p1}>коробка</p>
+                            <p className={style.p2}>
+                                <span className={style.span}>автомат</span>
+                                <span className={style.span}>механика</span>
+                            </p>
+                        </div>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Привод</h2>
-                        <button className={style.btn}>полный</button>
-                        <button className={style.btn}>задний</button>
-                        <button className={style.btn}>передний</button>
+                        <div className={style.carinfo}>
+                            <p className={style.p1}>привод</p>
+                            <p className={style.p2}>
+                                <span className={style.span}>полный</span>
+                                <span className={style.span}>передний</span>
+                                <span className={style.span}>задний</span>
+                            </p>
+                        </div>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Топливо</h2>
-                        <button className={style.btn} >бензин</button>
-                        <button className={style.btn}>дизель</button>
+                        <div className={style.carinfo}>
+                            <p className={style.p1}>топливо</p>
+                            <p className={style.p2}>
+                                <span className={style.span}>бензин</span>
+                                <span className={style.span}>дизель</span>
+                            </p>
+                        </div>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Руль</h2>
-                        <button className={style.btn}>справа</button>
-                        <button className={style.btn}>слева</button>
+                        <div className={style.carinfo}>
+                            <p className={style.p1}>руль</p>
+                            <p className={style.p2}>
+                                <span className={style.span}>слева</span>
+                                <span className={style.span}>справа</span>
+                            </p>
+                        </div>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Цвет</h2>
