@@ -1,21 +1,50 @@
 import React from 'react'
 import style from './create.module.css'
-import {    NavLink    } from 'react-router-dom'
+import Header from '../Header'
 export default function(){
-    const {className, setClassName} = React.useState()
+    const h2 = [
+        {id:4, name:'Тип кузова'},
+        {id:5, name:'КПП'},
+        {id:6, name:'Привод'},
+        {id:7, name:'Топливо'},
+        {id:8, name:'Руль'}
+    ]
+    const p = [
+        {name:'кузов' },
+        {name:'коробка'},
+        {name:'Привод'},
+        {name:'Топливо'},
+        {name:'руль'}
+    ]
+    const span = [
+        {name:[
+            {s:'седан'},
+            {s:'внедорожник'},
+            {s:'хэтчбэк'},
+            {s:'универсал'}
+        ]},
+        {name:[
+            {s:'автомат'},
+            {s:'механика'}
+        ]},
+        {name:[
+            {s:'полный'},
+            {s:'передний'},
+            {s:'задний'}
+        ]},
+        {name:[
+            {s:'бензин'},
+            {s:'дизель'}
+        ]},
+        {name:[
+            {s:'слева'},
+            {s:'справа'}
+        ]}
+    ]
     return (
         <div className={style.back}>
             <div className={style.path}>
-                <header className={style.header}>
-                    <div className={style.headerWhite}>
-                        <nav className={style.nav}>
-                            <NavLink to="/" exact className={style.navlink}>Главная</NavLink>
-                            <NavLink to="/create" exact className={style.navlink}>Создать</NavLink>
-                            <NavLink to="/login" exact className={style.navlink}>Вход/Регистрация</NavLink>
-                        </nav>
-                    </div>
-                    <div className={style.headerBlue}>UNE-MASHINE</div>
-                </header>
+                <Header />
                 <div className={style.create}>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Марка и модель </h2>
@@ -30,6 +59,21 @@ export default function(){
                         <h2 className={style.h2}>Объем двигателя, л</h2>
                         <input type="text" placeholder="Объем" className={style.input}/>
                     </div>
+                    {h2.map(h =>(
+                        <div key={h.id} className={style.createifno}>
+                            <h2 className={style.h2}>{h.name}</h2>
+                            {p.map(P => (
+                                <p className={style.p1}>{P.name}</p>
+                            ))}
+                            {span.map(s=>(
+                                <p className={style.p2}>
+                                    {s.name.map(sn=>(
+                                        <span className={style.span}>{sn.s}</span>
+                                    ))}
+                                </p>
+                            ))}
+                        </div>
+                    ))}
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Тип кузова </h2>
                         <div className={style.carinfo}>

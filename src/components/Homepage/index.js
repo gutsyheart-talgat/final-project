@@ -1,5 +1,5 @@
 import React from 'react'
-import {    NavLink    } from 'react-router-dom'
+import Header from '../Header'
 import style from './home.module.css'
 
 export default function(){
@@ -16,16 +16,7 @@ export default function(){
     return(
         <div className={style.back}>
             <div className={style.path}>
-                <header className={style.header}>
-                    <div className={style.headerWhite}>
-                        <nav className={style.nav}>
-                            <NavLink to="/" exact className={style.navlink}>Главная</NavLink>
-                            <NavLink to="/create" exact className={style.navlink}>Создать</NavLink>
-                            <NavLink to="/login" exact className={style.navlink}>Вход/Регистрация</NavLink>
-                        </nav>
-                    </div>
-                    <div className={style.headerBlue}>UNE-MASHINE</div>
-                </header>
+                <Header />
                 <div>
                     <div className={style.inputs}>
                         <input type="text" className={style.input} placeholder="марка"></input>

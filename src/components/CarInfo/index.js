@@ -1,21 +1,23 @@
 import React from 'react'
 import style from './carinfo.module.css'
-import {    NavLink     } from 'react-router-dom'
+import Header from '../Header'
 
 export default function(){
+    const carInfo = [
+        {id:1, name:'Год выпуска'},
+        {id:2, name:'Объем двигателя, л'},
+        {id:3, name:'Тип кузова'},
+        {id:4, name:'КПП'},
+        {id:5, name:'Привод'},
+        {id:6, name:'Топливо'},
+        {id:7, name:'Руль'},
+        {id:8, name:'Цвет'},
+        {id:9, name:'Цена'}
+    ]
     return (
         <div className={style.back}>
             <div className={style.path}>
-            <header className={style.header}>
-                    <div className={style.headerWhite}>
-                        <nav className={style.nav}>
-                            <NavLink to="/" exact className={style.navlink}>Главная</NavLink>
-                            <NavLink to="/create" exact className={style.navlink}>Создать</NavLink>
-                            <NavLink to="/login" exact className={style.navlink}>Вход/Регистрация</NavLink>
-                        </nav>
-                    </div>
-                    <div className={style.headerBlue}>UNE-MASHINE</div>
-                </header>
+                <Header />
                 <div>
                     <div className={style.infoheader}>
                         <div className={style.carheader}>
@@ -29,42 +31,12 @@ export default function(){
                     </div>
                     <div className={style.infobody}>
                         <div className={style.parametrs}>
-                            <div>
-                                <h2 className={style.h2}>Год выпуска</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Объем двигателя, л</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Тип кузова </h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>КПП</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Привод</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Топливо</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Руль</h2>
-                                <p></p>
-                            </div>
-                            <div> 
-                                <h2 className={style.h2}>Цвет</h2>
-                                <p></p>
-                            </div>
-                            <div>
-                                <h2 className={style.h2}>Цена</h2>
-                                <p></p>
-                            </div>
+                            {carInfo.map(car=>(
+                                <div key={car.id}>
+                                    <h2 className={style.h2}>{car.name}</h2>
+                                    <p></p>
+                                </div>
+                            ))}
                         </div>
                         <div className={style.carfoto}></div>
                     </div>

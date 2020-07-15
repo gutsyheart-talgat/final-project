@@ -14,12 +14,6 @@
     .path{
         width: 300px;
     }
-    .headerBlue{
-        font-size: 15px;
-    }
-    .navlink{
-        font-size: 8px;
-    }
     .input{
         width: 200px;
     }
@@ -30,12 +24,6 @@
 @media (min-width: 576px) {
     .path {
         width: 546px;
-    }
-    .headerBlue{
-        font-size: 25px;
-    }
-    .navlink{
-        font-size: 12px;
     }
     .input{
         width: 220px;
@@ -49,12 +37,6 @@
     .path {
         width: 738px;
     }
-    .headerBlue{
-        font-size: 30px;
-    }
-    .navlink{
-        font-size: 17px;
-    }
     .input{
         width: 310px;
     }
@@ -66,12 +48,6 @@
   @media (min-width: 992px) {
     .path {
         width: 962px;
-    }
-    .headerBlue{
-        font-size: 35px;
-    }
-    .navlink{
-        font-size: 20px;
     }
     .input{
         width: 400px;
@@ -85,12 +61,6 @@
     .path {
         width: 1170px;
     }
-    .headerBlue{
-        font-size: 40px;
-    }
-    .navlink{
-        font-size: 25px;
-    }
     .input{
         width: 337.5px;
     }
@@ -99,42 +69,7 @@
     }
   }
 
-.header{
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-}
-.headerWhite{
-    background-color: var(--white);
-    width: 100%;
-    height: 100%;
-}
-.nav{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.navlink{
-    color: var(--black);
-    text-decoration: none;
-    font-weight: 700;
-}
-.navlink:hover{
-    color: var(--blue);
-}
-.headerBlue{
-    width: 100%;
-    height: 100%;
-    background-color:var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:var(--white);
-    font-weight: bold;
-}
+
 .inputs{
     background-color: var(--white);
     display: flex;
