@@ -1,5 +1,5 @@
 .back{
-    background: url(../img/back.jpg) center / cover;
+    background: url(../../../public/back.jpg) center / cover;
     min-width: 100vw;
     min-height: 100vh;
     display: flex;

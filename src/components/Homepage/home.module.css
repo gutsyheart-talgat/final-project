@@ -14,58 +14,111 @@
     .path{
         width: 300px;
     }
-    .input{
+    .input,.carifno{
         width: 200px;
     }
     .cars{
         width: 270px;
     }
+    .span,.p1{
+        font-size: 8px;
+    }
+    .carinfo{
+        width:50px;
+        height: 15px;
+    }
+    .poiskbtn{
+        width: 70px;
+    }
 }
 @media (min-width: 576px) {
+    .carinfo{
+        width: 91px;
+        height: 15px;
+    }
     .path {
         width: 546px;
     }
-    .input{
+    .input,.carifno{
         width: 220px;
     }
     .cars{
         width: 516px;
     }
+    .span,.p1{
+        font-size: 12px;
+    }
+    .poiskbtn{
+        width: 100px;
+    }
   }
   
   @media (min-width: 768px) {
+    .carinfo{
+        width: 123px;
+        height: 30px;
+    }
+    .span,.p1{
+        font-size: 17px;
+    }
     .path {
         width: 738px;
     }
-    .input{
+    .input,.carifno{
         width: 310px;
     }
     .cars{
         width: 718px;
     }
+    .poiskbtn{
+        width: 120px;
+        font-size: 16px;
+    }
   }
   
   @media (min-width: 992px) {
+    .carinfo{
+        width: 160.4px;
+        height: 30px;
+    }
+    .span,.p1{
+        font-size: 20px;
+    }
     .path {
         width: 962px;
     }
-    .input{
+    .input,.carifno{
         width: 400px;
     }
     .cars{
         width: 932px;
     }
+    .poiskbtn{
+        width: 150px;
+        font-size: 20px;
+    }
   }
   
   @media (min-width: 1200px) {
+    .carinfo{
+        width: 195px;
+        height: 30px;
+    }
+    .span,.p1{
+        font-size: 25px;
+    }
     .path {
         width: 1170px;
     }
-    .input{
+    .input,.carifno{
         width: 337.5px;
     }
     .cars{
         width: 1140px;
+    }
+    .poiskbtn{
+        width: 170px;
+        font-size: 23px;
     }
   }
 
@@ -78,7 +131,7 @@
     flex-wrap: wrap;
     border-bottom: 1px solid black;
 }
-.input{
+.input,.carifno{
     margin: 15px 15px;
     height: 25px;
 }
@@ -94,7 +147,40 @@
     justify-content: center;
     align-items: center;
 }
-.carinfo{
-    width: 90%;
-    height: 90%;
+
+.p1{
+    opacity: 1;
+    
+}
+.p2{
+    display: none;
+}
+.carifno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: var(--white);
+}
+.carifno:hover .p1{
+    display: none;
+}
+.carifno:hover{
+    height: 150%;
+}
+.carifno:hover .p2{
+    display:flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.carifno:hover .span{
+    margin-bottom: 10px;
+}
+.span:hover{
+    color: var(--blue);
+}
+.poiskbtn{
+    height: 35px;
+    background-color: var(--blue);
+    color: var(--white);
 }

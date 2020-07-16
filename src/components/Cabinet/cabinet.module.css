@@ -14,35 +14,25 @@
     .path{
         width: 300px;
     }
-    .headerBlue,.h1{
+    .h1{
         font-size: 15px;
-    }
-    .navlink{
-        font-size: 8px;
     }
 }
 @media (min-width: 576px) {
     .path {
         width: 546px;
     }
-    .headerBlue,.h1{
+    .h1{
         font-size: 25px;
     }
-    .navlink{
-        font-size: 12px;
-    }
-   
   }
   
   @media (min-width: 768px) {
     .path {
         width: 738px;
     }
-    .headerBlue,.h1{
+    .h1{
         font-size: 30px;
-    }
-    .navlink{
-        font-size: 17px;
     }
     
   }
@@ -51,64 +41,20 @@
     .path {
         width: 962px;
     }
-    .headerBlue,.h1{
+    .h1{
         font-size: 35px;
     }
-    .navlink{
-        font-size: 20px;
-    }
-    
   }
   
   @media (min-width: 1200px) {
     .path {
         width: 1170px;
     }
-    .headerBlue,.h1{
+    .h1{
         font-size: 40px;
     }
-    .navlink{
-        font-size: 25px;
-    }
-    
   }
 
-.header{
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-}
-.headerWhite{
-    background-color: var(--white);
-    width: 100%;
-    height: 100%;
-}
-.nav{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.navlink{
-    color: var(--black);
-    text-decoration: none;
-    font-weight: 700;
-}
-.navlink:hover{
-    color: var(--blue);
-}
-.headerBlue{
-    width: 100%;
-    height: 100%;
-    background-color:var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:var(--white);
-    font-weight: bold;
-}
 .h1{
     text-align: center;
 }
