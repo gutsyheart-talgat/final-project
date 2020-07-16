@@ -48,11 +48,6 @@ export default function(){
         {id:70},
         {id:80}
     ]
-    const checkResponse = (response, errText) =>{
-        if(!response.ok) throw new Error(errText)
-        
-        return response.json()
-    }
     const handleFetch =()=>{
         fetch('https://une-mashine.herokuapp.com/cars/1')
             .then((response) => {
