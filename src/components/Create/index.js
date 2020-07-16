@@ -1,7 +1,9 @@
 import React from 'react'
 import style from './create.module.css'
 import Header from '../Header'
-export default function(){
+import {    connect     } from 'react-redux'
+import {    changeParam      } from '../../store/actions'
+export default function Creater(){
     const carParam = [
         {id:1, name:"марка",p: "марка", span:[
             {s:'mers'},
@@ -49,7 +51,8 @@ export default function(){
                                 <p className={style.p1}>{car.p}</p>
                                 <p className={style.p2}>{
                                     car.span.map(cs => (
-                                        <span className={style.span}>{cs.s}</span>
+                                        <span className={style.span}
+                                        value={}>{cs.s}</span>
                                     ))
                                 }</p>
                             </div>
@@ -74,3 +77,10 @@ export default function(){
         </div>
     )
 }
+const mapStateToProps = (state) =>({
+
+})
+const mapDispatchToProps = (dispatch) =>({
+    setParam: (param) => dispatch(changeParam(param))
+})
+export default connect(mapDispatchToProps, mapStateToProps)(Creater)
