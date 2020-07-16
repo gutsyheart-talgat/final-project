@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../Header'
 import style from './home.module.css'
-import Back from '../Back'
 
 export default function(){
     const inputs =[
@@ -50,8 +49,9 @@ export default function(){
         {id:80}
     ]
     return(
-        <Back>
-            <Header />
+        <div className={style.back}>
+            <div className={style.path}>
+                <Header />
                 <div>
                     <div className={style.inputs}>
                         {inputs.map(input => (
@@ -84,6 +84,7 @@ export default function(){
                     </div>
                     
                 </div>
-        </Back>
+            </div>
+        </div>
     )
 }
