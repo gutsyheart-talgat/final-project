@@ -1,11 +1,14 @@
 import React from 'react'
 import style from './create.module.css'
 import Header from '../Header'
-import {    connect     } from 'react-redux'
-import {    changeParam      } from '../../store/actions'
+import {  useDispatch , useSelector  } from 'react-redux'
+import {    changeParam ,changePrice,changeColor,changeDesc    } from '../../store/actions'
 export default function Creater(){
+    const dispatch = useDispatch()
+    const creater = useSelector(state => state.creater)
+    console.log(creater)
     const carParam = [
-        {id:1, name:"марка",p: "марка", span:[
+        {id:1, name:"марка",p: "марка",par:'marks', span:[
             {s:'mers'},
             {s:'toyota'},
             {s:'bmw'},
@@ -15,30 +18,45 @@ export default function Creater(){
             {s:'honda'},
             {s:'hundai'}
         ]},
-        {id:4, name:'Тип кузова',p:'кузов', span: [
+        {id:4, name:'Тип кузова',p:'кузов',par:'kuzov', span: [
             {s:'седан'},
             {s:'внедорожник'},
             {s:'хэтчбэк'},
             {s:'универсал'}
         ]},
-        {id:5, name:'КПП',p:'коробка',span:[
+        {id:5, name:'КПП',p:'коробка',par:'kpp',span:[
             {s:'автомат'},
             {s:'механика'}
         ]},
-        {id:6, name:'Привод',p:'Привод', span:[
+        {id:6, name:'Привод',p:'Привод',par:'privod', span:[
             {s:'полный'},
             {s:'передний'},
             {s:'задний'}
         ]},
-        {id:7, name:'Топливо',p:'Топливо',span:[
+        {id:7, name:'Топливо',p:'Топливо',par:'toplivo',span:[
             {s:'бензин'},
             {s:'дизель'}
         ]},
-        {id:8, name:'Руль',p:'руль',span:[
+        {id:8, name:'Руль',p:'руль',par:'rul',span:[
             {s:'слева'},
             {s:'справа'}
         ]}
     ]
+    const handleChoise = (item,name) => () => {
+        dispatch(changeParam(name,item))
+    }
+    const handleColor = (value, name)  =>{
+        dispatch(changeParam(name,value))
+    }
+    const handlePrice = (value, name) =>{
+        dispatch(changeParam(name,value))
+    }
+    const handleDesc = (value, name) =>{
+        dispatch(changeParam(name,value))
+    }
+    const createCar = ()=>{
+        fetch('https://une-mashine.herokuapp.com/create/users')
+    }
     return (
         <div className={style.back}>
             <div className={style.path}>
@@ -51,8 +69,11 @@ export default function Creater(){
                                 <p className={style.p1}>{car.p}</p>
                                 <p className={style.p2}>{
                                     car.span.map(cs => (
-                                        <span className={style.span}
-                                        value={}>{cs.s}</span>
+                                        <span 
+                                        key={cs.s}
+                                        className={style.span}
+                                        onClick={handleChoise(cs.s,car.par)}
+                                        >{cs.s}</span>
                                     ))
                                 }</p>
                             </div>
@@ -61,26 +82,30 @@ export default function Creater(){
                     ))}
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Цвет</h2>
-                        <input type="text" placeholder="Цвет" className={style.input}/>
+                        <input 
+                        type="text" 
+                        placeholder="Цвет" 
+                        className={style.input}
+                        onChange={e => handleColor(e.target.value, 'color')}/>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Цена</h2>
-                        <input type="text" placeholder="Цена" className={style.input}/>
+                        <input 
+                        type="text" 
+                        placeholder="Цена" 
+                        className={style.input}
+                        onChange={e => handlePrice(e.target.value, 'price')}/>
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Описание</h2>
-                        <input type="text" placeholder="Описание" className={style.input}/>
+                        <input type="text" placeholder="Описание" className={style.input}
+                        onChange={e => handleDesc(e.target.value, 'desc')}/>
                     </div>
                 </div>
-                <button className={style.createbtn}>Создать</button>
+                <button 
+                className={style.createbtn}
+                onClick={createCar}>Создать</button>
             </div>
         </div>
     )
 }
-const mapStateToProps = (state) =>({
-
-})
-const mapDispatchToProps = (dispatch) =>({
-    setParam: (param) => dispatch(changeParam(param))
-})
-export default connect(mapDispatchToProps, mapStateToProps)(Creater)

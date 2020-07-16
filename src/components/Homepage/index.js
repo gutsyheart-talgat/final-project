@@ -48,6 +48,22 @@ export default function(){
         {id:70},
         {id:80}
     ]
+    const checkResponse = (response, errText) =>{
+        if(!response.ok) throw new Error(errText)
+        
+        return response.json()
+    }
+    const handleFetch =()=>{
+        fetch('https://une-mashine.herokuapp.com/cars/1')
+            .then((response) => {
+                if(!response.ok) throw response
+                return response.json()
+            })
+            .then(data => console.log(data))
+            .catch(err => {
+                console.log(err)
+            })
+    }
     return(
         <div className={style.back}>
             <div className={style.path}>
@@ -59,7 +75,7 @@ export default function(){
                                     <p className={style.p1}>{input.p}</p>
                                     <p className={style.p2}>{
                                         input.span.map(cs => (
-                                            <span className={style.span}>{cs.s}</span>
+                                            <span className={style.span} key={cs.s}>{cs.s}</span>
                                         ))
                                     }</p>
                                 </div>
@@ -78,7 +94,9 @@ export default function(){
                     <div className={style.cars}> 
                         {cars.map(car =>(
                             <div key={car.id} className={style.Car}>
-                                <div className={style.carinfo}></div>
+                                <div className={style.carinfo}>{
+                                    handleFetch()
+                                }</div>
                             </div>
                         ))}
                     </div>

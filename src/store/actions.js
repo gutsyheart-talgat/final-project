@@ -1,6 +1,7 @@
-export const changeParam = (param) => ({
+export const changeParam = (name,value) => ({
     type: 'CHANGE_PARAMETRS',
-    param
+    name,
+    value
 })
 export const changePrice = (price) => ({
     type: 'CHANGE_PRICE',
@@ -14,3 +15,19 @@ export const changeDesc = (desc) => ({
     type: 'CHANGE_DESC',
     desc
 })
+export const changeCarParam = () => ({
+    type: 'CHAN'
+})
+
+const checkResponse = (response, errText) =>{
+    if(!response.ok) throw new Error(errText)
+    return response.json()
+}
+
+// export const postCars = () = () =>{
+//     fetch('https://une-mashine.herokuapp.com/create/users')
+//         .then((response) => checkResponse(response, 'ошибка отправки'))
+//         .then((data)=>{
+//             dispatch({type:'CHANGE_PARAMETRS', data})
+//         })
+// }

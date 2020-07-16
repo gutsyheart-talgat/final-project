@@ -1,3 +1,4 @@
+
 const initialState = {
     marks:'',
     kuzov:'',
@@ -14,7 +15,8 @@ const reducer = (state = initialState, action) =>{
     switch(action.type){
         case 'CHANGE_PARAMETRS':
             return {
-                ...state
+                ...state,
+                [action.name]: action.value
             }
         case 'CHANGE_PRICE':
             return{
