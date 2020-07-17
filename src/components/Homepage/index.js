@@ -38,27 +38,23 @@ export default function(){
             {s:'справа'}
         ]}
     ]
-    const cars = [
-        {id:10},
-        {id:20},
-        {id:30},
-        {id:40},
-        {id:50},
-        {id:60},
-        {id:70},
-        {id:80}
-    ]
-    const handleFetch =()=>{
-        fetch('https://une-mashine.herokuapp.com/cars/1')
+    
+    const [state, setState] = React.useState([''])
+    React.useEffect(()=> {
+        fetch('http://localhost:5555/list')
             .then((response) => {
                 if(!response.ok) throw response
                 return response.json()
             })
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                // setState({data})
+                // console.log('state',state)
+            })
             .catch(err => {
                 console.log(err)
             })
-    }
+    },[])
     return(
         <div className={style.back}>
             <div className={style.path}>
@@ -87,13 +83,7 @@ export default function(){
                     </div>
                    
                     <div className={style.cars}> 
-                        {cars.map(car =>(
-                            <div key={car.id} className={style.Car}>
-                                <div className={style.carinfo}>{
-                                    handleFetch()
-                                }</div>
-                            </div>
-                        ))}
+                        {/* {state.map(car => <Card key={car.id} info={car} />)} */}
                     </div>
                     
                 </div>

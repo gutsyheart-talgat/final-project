@@ -1,12 +1,11 @@
 import React from 'react'
 import style from './create.module.css'
 import Header from '../Header'
-import {  useDispatch , useSelector  } from 'react-redux'
-import {    changeParam ,changePrice,changeColor,changeDesc    } from '../../store/actions'
 export default function Creater(){
-    const dispatch = useDispatch()
-    const creater = useSelector(state => state.creater)
-    console.log(creater)
+    // React.useEffect(()=>{
+    //     fet
+    // },[])
+    
     const carParam = [
         {id:1, name:"марка",p: "марка",par:'marks', span:[
             {s:'mers'},
@@ -42,21 +41,6 @@ export default function Creater(){
             {s:'справа'}
         ]}
     ]
-    const handleChoise = (item,name) => () => {
-        dispatch(changeParam(name,item))
-    }
-    const handleColor = (value, name)  =>{
-        dispatch(changeParam(name,value))
-    }
-    const handlePrice = (value, name) =>{
-        dispatch(changeParam(name,value))
-    }
-    const handleDesc = (value, name) =>{
-        dispatch(changeParam(name,value))
-    }
-    const createCar = ()=>{
-        fetch('https://une-mashine.herokuapp.com/create/users')
-    }
     return (
         <div className={style.back}>
             <div className={style.path}>
@@ -72,7 +56,6 @@ export default function Creater(){
                                         <span 
                                         key={cs.s}
                                         className={style.span}
-                                        onClick={handleChoise(cs.s,car.par)}
                                         >{cs.s}</span>
                                     ))
                                 }</p>
@@ -86,7 +69,7 @@ export default function Creater(){
                         type="text" 
                         placeholder="Цвет" 
                         className={style.input}
-                        onChange={e => handleColor(e.target.value, 'color')}/>
+                        />
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Цена</h2>
@@ -94,17 +77,17 @@ export default function Creater(){
                         type="text" 
                         placeholder="Цена" 
                         className={style.input}
-                        onChange={e => handlePrice(e.target.value, 'price')}/>
+                        />
                     </div>
                     <div className={style.createifno}>
                         <h2 className={style.h2}>Описание</h2>
                         <input type="text" placeholder="Описание" className={style.input}
-                        onChange={e => handleDesc(e.target.value, 'desc')}/>
+                        />
                     </div>
                 </div>
                 <button 
                 className={style.createbtn}
-                onClick={createCar}>Создать</button>
+                >Создать</button>
             </div>
         </div>
     )
