@@ -146,6 +146,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
 }
 
 .p1{
@@ -183,4 +184,19 @@
     height: 35px;
     background-color: var(--blue);
     color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+.card{
+    color: var(--black);
+    cursor: pointer;
+    min-height: 100px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card:hover{
+    color: var(--blue);
 }

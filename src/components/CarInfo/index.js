@@ -2,18 +2,23 @@ import React from 'react'
 import style from './carinfo.module.css'
 import Header from '../Header'
 
-export default function(){
-    const carInfo = [
-        {id:1, name:'Год выпуска'},
-        {id:2, name:'Объем двигателя, л'},
-        {id:3, name:'Тип кузова'},
-        {id:4, name:'КПП'},
-        {id:5, name:'Привод'},
-        {id:6, name:'Топливо'},
-        {id:7, name:'Руль'},
-        {id:8, name:'Цвет'},
-        {id:9, name:'Цена'}
-    ]
+function Carinfo({match}){
+    const [info, setInfo] = React.useState(null)
+    console.log(match,'match')
+    React.useEffect(()=> {
+        fetch(`http://localhost:5555/list/${match.params.id}`)
+            .then((response) => {
+                if(!response.ok) throw response
+                return response.json()
+            })
+            .then(data => {
+                setInfo(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    },[])
+    console.log('infocar',info)
     return (
         <div className={style.back}>
             <div className={style.path}>
@@ -21,8 +26,8 @@ export default function(){
                 <div>
                     <div className={style.infoheader}>
                         <div className={style.carheader}>
-                            <h1 className={style.h1}>Продажа Lexus LX III 570 5.7</h1>
-                            <h1 className={style.h1}>$ 33 500</h1>
+                            <h1 className={style.h1}>{info && info.marks}</h1>
+                            <h1 className={style.h1}>{info && info.price}$</h1>
                         </div>
                         <div className={style.owner}>
                             <div className={style.img}></div>
@@ -31,14 +36,44 @@ export default function(){
                     </div>
                     <div className={style.infobody}>
                         <div className={style.parametrs}>
-                            {carInfo.map(car=>(
-                                <div key={car.id}>
-                                    <h2 className={style.h2}>{car.name}</h2>
-                                    <p></p>
-                                </div>
-                            ))}
+                            <div>
+                                <h2 className={style.h2}>Год выпуска</h2>
+                                <p>{info && info.year}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Объем двигателя, л</h2>
+                                <p>{info && info.obem}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Тип кузова</h2>
+                                <p>{info && info.kuzov}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>КПП</h2>
+                                <p>{info && info.kpp}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Привод</h2>
+                                <p>{info && info.privod}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Топливо</h2>
+                                <p>{info && info.toplivo}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Руль</h2>
+                                <p>{info && info.rul}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Цвет</h2>
+                                <p>{info && info.color}</p>
+                            </div>
+                            <div>
+                                <h2 className={style.h2}>Цена</h2>
+                                <p>{info && info.price}$</p>
+                            </div>
                         </div>
-                        <div className={style.carfoto}></div>
+                        <div className={style.carfoto}>{info && info.desc}</div>
                     </div>
 
                 </div>
@@ -46,3 +81,4 @@ export default function(){
         </div>
     )
 }
+export default Carinfo
