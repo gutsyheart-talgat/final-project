@@ -1,20 +1,6 @@
 import React from 'react'
-import style from './create.module.css'
-import Header from '../Header'
-export default function Creater(){
-    
-    const [mark, setMark] = React.useState('марка')
-    const [rul, setRul] = React.useState('Руль')
-    const [privod, setPrivod] = React.useState('Привод')
-    const [toplivo, setToplivo] = React.useState('Топливо')
-    const [kuzov, setKuzov] = React.useState('Тип кузова')
-    const [kpp, setKpp] = React.useState('коробка')
-    const [color, setColor] = React.useState('Цвет')
-    const [price, setPrice] = React.useState('Цена')
-    const [desc, setDesc] = React.useState('Описание')
-    const [year, setYear] = React.useState('Год выпуска')
-    const [obem, setObem] = React.useState('Объем')
 
+export default function({props}){
     const handleMark = (e, name) => {
         e.preventDefault()
         setMark(name)
@@ -59,42 +45,9 @@ export default function Creater(){
         setDesc(name)
     }
     
-   const handleCar = () => {
-    function addTask(body) {
-        
-        return fetch('http://localhost:5555/add', {
-            method : 'POST',
-            headers :{ 'Content-Type': 'application/json' },
-            body : JSON.stringify(body),
-            })
-            .then(response => {
-                if(!response.ok) throw new Error('Не удалось создать заметку!')
-            })
-        } 
-        addTask({
-            marks: mark, 
-            privod: privod,
-            toplivo: toplivo,
-            rul: rul,
-            kpp: kpp,
-            kuzov: kuzov,
-            color: color,
-            price: price,
-            desc: desc,
-            obem: obem,
-            year: year
-        })
-   }
-        
-    
-    
-    return (
-        <div className={style.back}>
-            <div className={style.path}>
-                <Header />
-                <div className={style.create}>
-                    
-                    <div className={style.createifno}>
+    return(
+        <div>
+            <div className={style.createifno}>
                         <h2 className={style.h2}>Марка</h2>
                         <div className={style.carinfo}>
                             <p className={style.p1}>{mark} </p>
@@ -210,12 +163,6 @@ export default function Creater(){
                         />
                     </div>
                 </div>
-                <button 
-                onClick={handleCar}
-                className={style.createbtn}
-                >Создать</button>
-            </div>
-        </div>
-        
+       
     )
 }
